@@ -8,11 +8,9 @@ router.get("/", async (req, res) => {
     res.status(200).json(post);
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({
-        error: "There was an error while saving the post to the database"
-      });
+    res.status(500).json({
+      error: "There was an error while saving the post to the database"
+    });
   }
 });
 
@@ -43,19 +41,15 @@ router.post("/", async (req, res) => {
     if (content[0].title && content[0].contents) {
       res.status(201).json(req.body);
     } else {
-      res
-        .status(400)
-        .json({
-          errorMessage: "Please provide title and contents for the post."
-        });
+      res.status(400).json({
+        errorMessage: "Please provide title and contents for the post."
+      });
     }
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({
-        error: "There was an error while saving the post to the database"
-      });
+    res.status(500).json({
+      error: "There was an error while saving the post to the database"
+    });
   }
 });
 
@@ -85,11 +79,9 @@ router.put("/:id", async (req, res) => {
     if (req.body.title && req.body.contents) {
       res.status(200).json(req.body);
     } else {
-      res
-        .status(400)
-        .json({
-          errorMessage: "Please provide title and contents for the post."
-        });
+      res.status(400).json({
+        errorMessage: "Please provide title and contents for the post."
+      });
     }
   } catch (error) {
     res
